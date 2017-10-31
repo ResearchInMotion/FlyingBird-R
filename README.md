@@ -1,3 +1,0 @@
-# FlyingBird-R
-
-chmapions here

@@ -1,0 +1,206 @@
+> data3=scan()
+1: 7 38 2 3 4 76
+7: 83 78
+9: 87 828 372
+12: 
+Read 11 items
+> data3
+ [1]   7  38   2   3   4  76  83  78  87 828 372
+> data4=scan()
+1: 98 15 827 727
+5: 938 23 76
+8: 
+Read 7 items
+> data4
+[1]  98  15 827 727 938  23  76
+> days=scan(what = 'character')
+1: sahil nikki
+3: vimal manju
+5: 
+Read 4 items
+> days
+[1] "sahil" "nikki" "vimal" "manju"
+> data5= scan(what = double)
+Error in scan(what = double) : invalid 'what' argument
+> data5= scan(what = double())
+1: 87.9 76.2
+3: 879.7 234.7
+5: 
+Read 4 items
+> data5
+[1]  87.9  76.2 879.7 234.7
+> data5= scan(what = double())
+1: 76 73.2
+3: 
+Read 2 items
+> data5
+[1] 76.0 73.2
+> data5=scan(sep = ',')
+1: 45 67
+2: 3467 32
+3: 
+Read 2 items
+> data5
+[1]   4567 346732
+> 
+> data5=scan(sep = ',')
+1: 4,3,2,3
+5: 2,3,4,5
+9: 
+Read 8 items
+> data5
+[1] 4 3 2 3 2 3 4 5
+> data5=scan(what = character() , sep = ',')
+1: sahil, nikki
+3: manju , sahil
+5: vimla,nikki
+7: 
+Read 6 items
+> data5
+[1] "sahil"  " nikki" "manju " " sahil" "vimla"  "nikki" 
+> data5=scan(sep = ',' , what = character()
++ 
++ 
++ 
++ 2
+Error: unexpected numeric constant in:
+"
+2"
+> data5=scan(sep = ',' , what = character())
+1: sahil,nikki
+3: manju ,vimal
+5: 
+Read 4 items
+> data5
+[1] "sahil"  "nikki"  "manju " "vimal" 
+> getwd()
+[1] "C:/Users/Sahil/Documents"
+> data6=scan(file = 'mainfile.txt')
+Read 19 items
+> data6
+ [1] 9.0567701 0.1652354 6.1826352 9.9105261 2.1249417 3.8236254 7.1477849 8.1639079
+ [9] 2.9421142 3.6375272 7.2995951 2.4878783 9.4945357 3.9853871 8.5306628 5.3669468
+[17] 4.8858939 2.6193310 0.9313082
+> data7=read.csv('mainfile.csv',header=TRUE,sep=',')
+> data7
+          X        AGE      MONEY
+1  7.792167 157.040970 441.720157
+2        NA 178.081108 523.010831
+3        NA 232.432049 775.997076
+4        NA 229.876886 584.458081
+5        NA  79.565113 760.820949
+6        NA 179.403138 260.800470
+7        NA 119.201433 744.683828
+8        NA 148.390649  11.530333
+9        NA 134.004064 864.469372
+10       NA  26.191673 437.974810
+11       NA 232.383949 183.587835
+12       NA   9.742932 730.314435
+13       NA 122.675225 191.288647
+14       NA 188.807065 884.357733
+15       NA 259.460276 840.303224
+16       NA  89.601976 518.024260
+17       NA 226.518412 330.945863
+18       NA  95.571981   8.248519
+19       NA 272.788216 459.615485
+20       NA 267.581652 388.541126
+21       NA 240.704203 779.539471
+> mycsv=read.table('mainfile2.csv',header = TRUE , sep = ',')
+> mycsv
+          X data1 data2 data3
+1  1.408071     1    16    31
+2        NA     2    17    32
+3        NA     3    18    33
+4        NA     4    19    34
+5        NA     5    20    35
+6        NA     6    21    36
+7        NA     7    22    37
+8        NA     8    23    38
+9        NA     9    24    39
+10       NA    10    25    40
+11       NA    11    26    41
+12       NA    12    27    42
+13       NA    13    28    43
+14       NA    14    29    44
+15       NA    15    30    45
+> ls
+function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+    pattern, sorted = TRUE) 
+{
+    if (!missing(name)) {
+        pos <- tryCatch(name, error = function(e) e)
+        if (inherits(pos, "error")) {
+            name <- substitute(name)
+            if (!is.character(name)) 
+                name <- deparse(name)
+            warning(gettextf("%s converted to character string", 
+                sQuote(name)), domain = NA)
+            pos <- name
+        }
+    }
+    all.names <- .Internal(ls(envir, all.names, sorted))
+    if (!missing(pattern)) {
+        if ((ll <- length(grep("[", pattern, fixed = TRUE))) && 
+            ll != length(grep("]", pattern, fixed = TRUE))) {
+            if (pattern == "[") {
+                pattern <- "\\["
+                warning("replaced regular expression pattern '[' by  '\\\\['")
+            }
+            else if (length(grep("[^\\\\]\\[<-", pattern))) {
+                pattern <- sub("\\[<-", "\\\\\\[<-", pattern)
+                warning("replaced '[<-' by '\\\\[<-' in regular expression pattern")
+            }
+        }
+        grep(pattern, all.names, value = TRUE)
+    }
+    else all.names
+}
+<bytecode: 0x000000000688ea98>
+<environment: namespace:base>
+> ls()
+[1] "data3" "data4" "data5" "data6" "data7" "days"  "mycsv"
+> ls(pattern = 'da')
+[1] "data3" "data4" "data5" "data6" "data7" "days" 
+> data3
+ [1]   7  38   2   3   4  76  83  78  87 828 372
+> valueoffile=read.csv('mainfile2.csv',header = TRUE,sep = ',',as.is = 2)
+> valueoffile
+          X data1 data2 data3
+1  1.408071     1    16    31
+2        NA     2    17    32
+3        NA     3    18    33
+4        NA     4    19    34
+5        NA     5    20    35
+6        NA     6    21    36
+7        NA     7    22    37
+8        NA     8    23    38
+9        NA     9    24    39
+10       NA    10    25    40
+11       NA    11    26    41
+12       NA    12    27    42
+13       NA    13    28    43
+14       NA    14    29    44
+15       NA    15    30    45
+> data2
+Error: object 'data2' not found
+> data3
+ [1]   7  38   2   3   4  76  83  78  87 828 372
+> data2=as.character(data3)
+> data2
+ [1] "7"   "38"  "2"   "3"   "4"   "76"  "83"  "78"  "87"  "828" "372"
+> data2=as.factor(data3)
+> data2
+ [1] 7   38  2   3   4   76  83  78  87  828 372
+Levels: 2 3 4 7 38 76 78 83 87 372 828
+> floatvaluestoint=scan(what = float())
+Error in float() : could not find function "float"
+> floatvaluestoint=scan(what = double())
+1: 7.3 4.3 3.2
+4: 7.9 89.7 65.3
+7: 
+Read 6 items
+> floatvaluestoint
+[1]  7.3  4.3  3.2  7.9 89.7 65.3
+> intconversion = as.integer(floatvaluestoint)
+> intconversion
+[1]  7
