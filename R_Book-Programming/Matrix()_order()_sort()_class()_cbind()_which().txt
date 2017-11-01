@@ -1,0 +1,94 @@
+> matrix = matrix(data = 1,2,3,4,5,6, nrow = 3,ncol = 2)
+Error in matrix(data = 1, 2, 3, 4, 5, 6, nrow = 3, ncol = 2) : 
+  unused arguments (4, 5, 6)
+> matrix = matrix(data = 1,2,3,4,5,6), nrow = 3,ncol = 2)
+Error: unexpected ',' in "matrix = matrix(data = 1,2,3,4,5,6),"
+> matrix = matrix(c(1,2,3,4,5,6), nrow = 3,ncol = 2)
+> matrix
+     [,1] [,2]
+[1,]    1    4
+[2,]    2    5
+[3,]    3    6
+> t(matrix)
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+> matrix1 = matrix(c(1,2,3,4,5,6), nrow = 3,ncol = 2)
+> matrix2=matrix(c(11,22,33) , nrow = 3, ncol = 1)
+> cbind(matrix1,matrix2)
+     [,1] [,2] [,3]
+[1,]    1    4   11
+[2,]    2    5   22
+[3,]    3    6   33
+> matrix3=matrix(c(111,222,333),nrow = 1,ncol = 3)
+> cbind(matrix2,matrix3)
+Error in cbind(matrix2, matrix3) : 
+  number of rows of matrices must match (see arg 2)
+> matrix3=matrix(c(111,222,333),nrow = 3,ncol = 1)
+> cbind(matrix2,matrix3)
+     [,1] [,2]
+[1,]   11  111
+[2,]   22  222
+[3,]   33  333
+> sort(matrix1)
+[1] 1 2 3 4 5 6
+> mainmatrix=cbind(matrix1,matrix2)
+> mainmatrix
+     [,1] [,2] [,3]
+[1,]    1    4   11
+[2,]    2    5   22
+[3,]    3    6   33
+> sort(mainmatrix)
+[1]  1  2  3  4  5  6 11 22 33
+> order(mainmatrix)
+[1] 1 2 3 4 5 6 7 8 9
+> rank(mainmatrix)
+[1] 1 2 3 4 5 6 7 8 9
+> head(mainmatrix)
+     [,1] [,2] [,3]
+[1,]    1    4   11
+[2,]    2    5   22
+[3,]    3    6   33
+> fileread=read.csv(file='C://Users/Sahil/Documents/SAHIL.csv')
+> names(fileread)
+[1] "SER.NO." "NAME"    "GENDER"  "COUNTRY"
+> head(fileread)
+  SER.NO. NAME GENDER COUNTRY
+1       1  RAM   MALE   INDIA
+2       2 SHAM   MALE DENMARK
+3       3 SITA FEMALE AMERICA
+4       4 RAMA FEMALE    ITLY
+5       5   OM   MALE ENGLAND
+6       6 PURI FEMALE  CANADA
+> tail(fileread)
+   SER.NO.  NAME GENDER COUNTRY
+5        5    OM   MALE ENGLAND
+6        6  PURI FEMALE  CANADA
+7        7 NISHA FEMALE  BHUTAN
+8        8  JAYA FEMALE   NEPAL
+9        9 SEEMA FEMALE   CHINA
+10      10   RAM   MALE   INDIA
+> summary(fileread)
+    SER.NO.           NAME      GENDER     COUNTRY 
+ Min.   : 1.00   RAM    :2   FEMALE:6   INDIA  :2  
+ 1st Qu.: 3.25   JAYA   :1   MALE  :4   AMERICA:1  
+ Median : 5.50   NISHA  :1              BHUTAN :1  
+ Mean   : 5.50   OM     :1              CANADA :1  
+ 3rd Qu.: 7.75   PURI   :1              CHINA  :1  
+ Max.   :10.00   RAMA   :1              DENMARK:1  
+                 (Other):3              (Other):3  
+> data=scan(what = integer())
+1: 21 43 87 76 56
+6: 76 65 42 61 91 
+11: 
+Read 10 items
+> which(data==76)
+[1] 4 6
+> class(data)
+[1] "integer"
+> class(mainmatrix)
+[1] "matrix"
+> order(data)
+ [1]  1  8  2  5  9  7  4  6  3 10
+> sort(data)
+ [1] 21 42 43 56 61 65 76 76 87 91
