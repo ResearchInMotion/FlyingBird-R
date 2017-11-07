@@ -1,0 +1,155 @@
+> install.packages("RMySQL")
+Warning in install.packages :
+  cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/src/contrib/PACKAGES.rds': HTTP status was '404 Not Found'
+Installing package into ‘C:/Users/Sahil/Documents/R/win-library/3.4’
+(as ‘lib’ is unspecified)
+also installing the dependency ‘DBI’
+
+Warning in install.packages :
+  cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/3.4/PACKAGES.rds': HTTP status was '404 Not Found'
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/DBI_0.7.zip'
+Content type 'application/zip' length 749011 bytes (731 KB)
+downloaded 731 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/RMySQL_0.10.13.zip'
+Content type 'application/zip' length 2297987 bytes (2.2 MB)
+downloaded 2.2 MB
+
+package ‘DBI’ successfully unpacked and MD5 sums checked
+package ‘RMySQL’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Sahil\AppData\Local\Temp\RtmpKKEFii\downloaded_packages
+> mysqlconnection = dbConnect(MySQL(), user = 'root', password = '', dbname = 'sakila',
++                             host = 'localhost')
+Error in dbConnect(MySQL(), user = "root", password = "", dbname = "sakila",  : 
+  could not find function "dbConnect"
+> install.packages("RSQLServer")
+Installing package into ‘C:/Users/Sahil/Documents/R/win-library/3.4’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘bindr’, ‘bindrcpp’, ‘glue’, ‘magrittr’, ‘pkgconfig’, ‘plogr’, ‘rJava’, ‘dplyr’, ‘dbplyr’, ‘assertthat’, ‘yaml’, ‘purrr’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/bindr_0.1.zip'
+Content type 'application/zip' length 14970 bytes (14 KB)
+downloaded 14 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/bindrcpp_0.2.zip'
+Content type 'application/zip' length 637480 bytes (622 KB)
+downloaded 622 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/glue_1.2.0.zip'
+Content type 'application/zip' length 75896 bytes (74 KB)
+downloaded 74 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/magrittr_1.5.zip'
+Content type 'application/zip' length 155684 bytes (152 KB)
+downloaded 152 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/pkgconfig_2.0.1.zip'
+Content type 'application/zip' length 20067 bytes (19 KB)
+downloaded 19 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/plogr_0.1-1.zip'
+Content type 'application/zip' length 17924 bytes (17 KB)
+downloaded 17 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/rJava_0.9-9.zip'
+Content type 'application/zip' length 719432 bytes (702 KB)
+downloaded 702 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/dplyr_0.7.4.zip'
+Content type 'application/zip' length 2887155 bytes (2.8 MB)
+downloaded 2.8 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/dbplyr_1.1.0.zip'
+Content type 'application/zip' length 299184 bytes (292 KB)
+downloaded 292 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/assertthat_0.2.0.zip'
+Content type 'application/zip' length 43841 bytes (42 KB)
+downloaded 42 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/yaml_2.1.14.zip'
+Content type 'application/zip' length 179637 bytes (175 KB)
+downloaded 175 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/purrr_0.2.4.zip'
+Content type 'application/zip' length 243388 bytes (237 KB)
+downloaded 237 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/RSQLServer_0.3.0.zip'
+Content type 'application/zip' length 415074 bytes (405 KB)
+downloaded 405 KB
+
+package ‘bindr’ successfully unpacked and MD5 sums checked
+package ‘bindrcpp’ successfully unpacked and MD5 sums checked
+package ‘glue’ successfully unpacked and MD5 sums checked
+package ‘magrittr’ successfully unpacked and MD5 sums checked
+package ‘pkgconfig’ successfully unpacked and MD5 sums checked
+package ‘plogr’ successfully unpacked and MD5 sums checked
+package ‘rJava’ successfully unpacked and MD5 sums checked
+package ‘dplyr’ successfully unpacked and MD5 sums checked
+package ‘dbplyr’ successfully unpacked and MD5 sums checked
+package ‘assertthat’ successfully unpacked and MD5 sums checked
+package ‘yaml’ successfully unpacked and MD5 sums checked
+package ‘purrr’ successfully unpacked and MD5 sums checked
+package ‘RSQLServer’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Sahil\AppData\Local\Temp\RtmpKKEFii\downloaded_packages
+> mysqlconnection = dbConnect(MySQL(), user = 'root', password = '', dbname = 'sakila',
++                             host = 'localhost')
+Error in dbConnect(MySQL(), user = "root", password = "", dbname = "sakila",  : 
+  could not find function "dbConnect"
+> mysqlconnection = dbConnect(MySQL(), user = 'root', password = 'root', dbname = 'maroon5',host = 'localhost')
+Error in dbConnect(MySQL(), user = "root", password = "root", dbname = "maroon5",  : 
+  could not find function "dbConnect"
+> library("RSQLServer")
+Warning message:
+package ‘RSQLServer’ was built under R version 3.4.2 
+> mysqlconnection = dbConnect(MySQL(), user = 'root', password = 'root', dbname = 'maroon5',host = 'localhost')
+Error in MySQL() : could not find function "MySQL"
+> library(RMySQL)
+Loading required package: DBI
+Warning messages:
+1: package ‘RMySQL’ was built under R version 3.4.2 
+2: package ‘DBI’ was built under R version 3.4.2 
+> mysqlconnection = dbConnect(MySQL(), user = 'root', password = 'root', dbname = 'maroon5',host = 'localhost')
+> dbListTables(mysqlconnection)
+[1] "employee"
+> result = dbSendQuery(mysqlconnection, "select * from employee")
+> data.frame = fetch(result, n = 5)
+> print(data.frame)
+  FIRST_NAME LAST_NAME AGE SEX INCOME
+1        Mac     Mohan  20   M   2000
+2       Dell     sahil  21   M   1000
+3         HP     Nikki  21   M   3000
+> data.frame = fetch(result, n = -1)
+> print(data.frame)
+[1] FIRST_NAME LAST_NAME  AGE        SEX        INCOME    
+<0 rows> (or 0-length row.names)
+> dbSendQuery(mysqlconnection,
++             "INSERT INTO EMPLOYEE(FIRST_NAME,
++             LAST_NAME, AGE, SEX, INCOME)
++             VALUES ('HP', 'Nikki', 21, 'M', 3000)")
+<MySQLResult:41029264,0,2>
+> print(data.frame)
+[1] FIRST_NAME LAST_NAME  AGE        SEX        INCOME    
+<0 rows> (or 0-length row.names)
+> data.frame = fetch(result, n = 5)
+Error in fetch(result, n = 5) : 
+  internal error in RS_DBI_getResultSet: could not find resultSet in connection
+> print(data.frame)
+[1] FIRST_NAME LAST_NAME  AGE        SEX        INCOME    
+<0 rows> (or 0-length row.names)
+> data.frame = fetch(result, n = 5)
+Error in fetch(result, n = 5) : 
+  internal error in RS_DBI_getResultSet: could not find resultSet in connection
+> result = dbSendQuery(mysqlconnection, "select * from employee")
+> data.frame = fetch(result, n = 5)
+> print(data.frame)
+  FIRST_NAME LAST_NAME AGE SEX INCOME
+1        Mac     Mohan  20   M   2000
+2       Dell     sahil  21   M   1000
+3         HP     Nikki  21   M   3000
+4         HP     Nikki  21   M   3000
