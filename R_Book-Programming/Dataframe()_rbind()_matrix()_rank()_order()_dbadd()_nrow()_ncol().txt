@@ -1,0 +1,162 @@
+> empdata <- data.frame(
++     empid=c(1:5),
++     empname=c("sahil","nikki","vimal","manju","foriegner"),
++     empsalary=c(123.0,345.8,987.7,234.9,8786.9)
++ )
+> empdata
+  empid   empname empsalary
+1     1     sahil     123.0
+2     2     nikki     345.8
+3     3     vimal     987.7
+4     4     manju     234.9
+5     5 foriegner    8786.9
+> mysqlconnection = dbConnect(MySQL(), user = 'root', password = 'root', dbname = 'maroon5',host = 'localhost')
+> dbWriteTable(mysqlconnection,"empdata")
+Error in (function (classes, fdef, mtable)  : 
+  unable to find an inherited method for function ‘dbWriteTable’ for signature ‘"MySQLConnection", "character", "missing"’
+> dbWriteTable(mysqlconnection, "empdata", mtcars[, ], overwrite = TRUE)
+[1] TRUE
+> dbWriteTable(mysqlconnection, "empdata", mtcars[, ], overwrite = TRUE)
+[1] TRUE
+> dbWriteTable(mysqlconnection, "empdata", empdata[, ], overwrite = TRUE)
+[1] TRUE
+> city <- c("delhi","chennai","Mumbai")
+> state <- c("Delhi","Tamil Nadu","Maharasthra")
+> Pin code<-c(1345,6562,9899)
+Error: unexpected symbol in "Pin code"
+> Pin_code<-c(1345,6562,9899)
+> addresses<-cbind(city,state,pin_code)
+Error in cbind(city, state, pin_code) : object 'pin_code' not found
+> addresses<-cbind(city,state,Pin_code)
+> print(addresses)
+     city      state         Pin_code
+[1,] "delhi"   "Delhi"       "1345"  
+[2,] "chennai" "Tamil Nadu"  "6562"  
+[3,] "Mumbai"  "Maharasthra" "9899"  
+> mat<-matrix(data=c(1,2,3,4,5,6,),nrow = 2,ncol = 2,byrow = FALSE)
+Error in c(1, 2, 3, 4, 5, 6, ) : argument 7 is empty
+> mat<-matrix(data=c(1,2,3,4,5,6),nrow = 2,ncol = 2,byrow = FALSE)
+> mat
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+> mat<-matrix(data=c(1,2,3,4,5,6),nrow = 3,ncol = 3,byrow = FALSE)
+> mat
+     [,1] [,2] [,3]
+[1,]    1    4    1
+[2,]    2    5    2
+[3,]    3    6    3
+> addresses2<-data.frame(
++     city=c("puri","mayapur","kerala"),
++     state=c("odisha","kolkata","Goa"),
++     Pincode=c(123,456,890)
++ )
+> mainaddress=rbind(addresses,addresses2)
+Error in match.names(clabs, names(xi)) : 
+  names do not match previous names
+> addresses2<-data.frame(
++     city=c("puri","mayapur","kerala"),
++     state=c("odisha","kolkata","Goa"),
++     Pin_code=c(123,456,890)
++ )
+> mainaddress=rbind(addresses,addresses2)
+Warning message:
+In `[<-.factor`(`*tmp*`, ri, value = c(123, 456, 890)) :
+  invalid factor level, NA generated
+> mainaddress
+     city       state Pin_code
+1   delhi       Delhi     1345
+2 chennai  Tamil Nadu     6562
+3  Mumbai Maharasthra     9899
+4    puri      odisha     <NA>
+5 mayapur     kolkata     <NA>
+6  kerala         Goa     <NA>
+> addresses2<-data.frame(
++     city=c("puri","mayapur","kerala"),
++     state=c("odisha","kolkata","Goa"),
++     Pin_code=c(1237,4560,8906)
++ )
+> mainaddress=rbind(addresses,addresses2)
+Warning message:
+In `[<-.factor`(`*tmp*`, ri, value = c(1237, 4560, 8906)) :
+  invalid factor level, NA generated
+> mainaddress
+     city       state Pin_code
+1   delhi       Delhi     1345
+2 chennai  Tamil Nadu     6562
+3  Mumbai Maharasthra     9899
+4    puri      odisha     <NA>
+5 mayapur     kolkata     <NA>
+6  kerala         Goa     <NA>
+> addresses2<-data.frame(
++     city=c("puri","mayapur","kerala"),
++     state=c("odisha","kolkata","Goa"),
++     Pin_code=c("1237","4560","8906")
++ )
+> mainaddress=rbind(addresses,addresses2)
+> mainaddress
+     city       state Pin_code
+1   delhi       Delhi     1345
+2 chennai  Tamil Nadu     6562
+3  Mumbai Maharasthra     9899
+4    puri      odisha     1237
+5 mayapur     kolkata     4560
+6  kerala         Goa     8906
+> sort(empdata)
+Error in `[.data.frame`(x, order(x, na.last = na.last, decreasing = decreasing)) : 
+  undefined columns selected
+> order(empdata)
+ [1] 11 14 12 13  1  2  3  4  5 15 10  9  7  6  8
+> rank(empdata)
+    empid   empname empsalary      <NA>      <NA>      <NA>      <NA>      <NA>      <NA> 
+        5         6         7         8         9        14        13        15        12 
+     <NA>      <NA>      <NA>      <NA>      <NA>      <NA> 
+       11         1         3         4         2        10 
+> r<-rank(x<-c(1,2,453,2,1,4,6,3))
+> r
+[1] 1.5 3.5 8.0 3.5 1.5 6.0 7.0 5.0
+> r<-c(1,2,6,4,5)
+> rank(r)
+[1] 1 2 5 3 4
+> sample<-c(1,2,3,5)
+> sample2<-c(1:4)
+> sample;sample2
+[1] 1 2 3 5
+[1] 1 2 3 4
+> cmat=cbind(sample,sample2)
+> cmat
+     sample sample2
+[1,]      1       1
+[2,]      2       2
+[3,]      3       3
+[4,]      5       4
+> sample3=scan(what = character())
+1: r y e w
+5: 
+Read 4 items
+> mainsample=cbind(sample,sample2,sample3)
+> str(mainsample)
+ chr [1:4, 1:3] "1" "2" "3" "5" "1" "2" "3" "4" "r" "y" "e" "w"
+ - attr(*, "dimnames")=List of 2
+  ..$ : NULL
+  ..$ : chr [1:3] "sample" "sample2" "sample3"
+> as.integer(mainsample)
+ [1]  1  2  3  5  1  2  3  4 NA NA NA NA
+Warning message:
+NAs introduced by coercion 
+> as.numeric(mainsample)
+ [1]  1  2  3  5  1  2  3  4 NA NA NA NA
+Warning message:
+NAs introduced by coercion 
+> getwd()
+[1] "C:/Users/Sahil/Documents"
+> fileread=read.csv(file = )
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  argument "file" is missing, with no default
+> fileread=read.csv(file = 'mainfile.csv',header = TRUE)
+> print(is.data.frame(fileread))
+[1] TRUE
+> print(nrow(fileread))
+[1] 9
+> print(ncol(fileread))
+[1] 3
