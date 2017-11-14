@@ -1,0 +1,326 @@
+> n <- floor(rnorm(10000, 500, 100))
+> t <- table(n)
+> barplot(t)
+> maximumtemp=c(23,56,7,81,3)
+> barplot(maximumtemp)
+> maximumtemp=c(23,56,7,81,3,42,98)
+> barplot(maximumtemp)
+> barplot(maximumtemp,main = "Maximum Temperature in a Week",xlab = "Degree Celsius",ylab = "Day",names.arg =c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"),col = "Blue",horiz = TRUE)
+> barplot(maximumtemp,
++         main = "Maximum Temperatures in a Week",
++         xlab = "Degree Celsius",
++         ylab = "Day",
++         names.arg = c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"),
++         col = "darkred",
++         horiz = TRUE)
+> getwd
+function () 
+.Internal(getwd())
+<bytecode: 0x000000000f4265b0>
+<environment: namespace:base>
+> getwd()
+[1] "C:/Users/nex4vgv/Documents"
+> file=read.csv(file = "expo.csv",header = TRUE)
+> file
+    Name    Sports
+1  Sahil   Cricket
+2 Nikkki badminton
+3 Rachit  football
+4  arpit    soccer
+> barplot(file,
++         main = "Maximum Temperatures in a Week",
++         xlab = "Sports",
++         ylab = "Name",
++         col = "darkred",
++         horiz = TRUE)
+Error in barplot.default(file, main = "Maximum Temperatures in a Week",  : 
+  'height' must be a vector or a matrix
+> data2=data.frame(Name=c("marooon5","adam","peter","come"),
++                  Sports=c("dirty","mother","color","pit"))
+> data2
+      Name Sports
+1 marooon5  dirty
+2     adam mother
+3    peter  color
+4     come    pit
+> data3=cbind(file,data2)
+> data3
+    Name    Sports     Name Sports
+1  Sahil   Cricket marooon5  dirty
+2 Nikkki badminton     adam mother
+3 Rachit  football    peter  color
+4  arpit    soccer     come    pit
+> data4=rbind(file,data2)
+> data4
+      Name    Sports
+1    Sahil   Cricket
+2   Nikkki badminton
+3   Rachit  football
+4    arpit    soccer
+5 marooon5     dirty
+6     adam    mother
+7    peter     color
+8     come       pit
+> summary(file)
+     Name         Sports 
+ arpit :1   badminton:1  
+ Nikkki:1   Cricket  :1  
+ Rachit:1   football :1  
+ Sahil :1   soccer   :1  
+> sort(file)
+Error in `[.data.frame`(x, order(x, na.last = na.last, decreasing = decreasing)) : 
+  undefined columns selected
+> sort(x = character,decreasing = FALSE)
+Error in sort.int(x, na.last = na.last, decreasing = decreasing, ...) : 
+  'x' must be atomic
+> sort(x = character(),decreasing = FALSE)
+character(0)
+> sort(file , x = character(),decreasing = FALSE)
+character(0)
+> age <- c(17,18,18,17,18,19,18,16,18,18)
+> table(age)
+age
+16 17 18 19 
+ 1  2  6  1 
+> bunk=c(1:20)
+> table(bunk)
+bunk
+ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 
+ 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
+> count(table)
+Error in count(table) : could not find function "count"
+> nrow(file)
+[1] 4
+> ncol(file)
+[1] 2
+> is.data.frame(file)
+[1] TRUE
+> barplot(table(age),
++         main="Age Count of 10 Students",
++         xlab="Age",
++         ylab="Count",
++         border="red",
++         col="blue",
++         density=10
++ )
+> barplot(table(age),
++         main="Age Count of 10 Students",
++         xlab="Age",
++         ylab="Count",
++         border="white",
++         col="blue",
++         density=10
++ )
+> barplot(table(age),
++         main="Age Count of 10 Students",
++         xlab="Age",
++         ylab="Count",
++         border="black",
++         col="blue",
++         density=10
++ )
+> Titanic
+, , Age = Child, Survived = No
+
+      Sex
+Class  Male Female
+  1st     0      0
+  2nd     0      0
+  3rd    35     17
+  Crew    0      0
+
+, , Age = Adult, Survived = No
+
+      Sex
+Class  Male Female
+  1st   118      4
+  2nd   154     13
+  3rd   387     89
+  Crew  670      3
+
+, , Age = Child, Survived = Yes
+
+      Sex
+Class  Male Female
+  1st     5      1
+  2nd    11     13
+  3rd    13     14
+  Crew    0      0
+
+, , Age = Adult, Survived = Yes
+
+      Sex
+Class  Male Female
+  1st    57    140
+  2nd    14     80
+  3rd    75     76
+  Crew  192     20
+
+> , , Age = Child, Survived = No
+Error: unexpected ',' in ","
+> Titanic
+, , Age = Child, Survived = No
+
+      Sex
+Class  Male Female
+  1st     0      0
+  2nd     0      0
+  3rd    35     17
+  Crew    0      0
+
+, , Age = Adult, Survived = No
+
+      Sex
+Class  Male Female
+  1st   118      4
+  2nd   154     13
+  3rd   387     89
+  Crew  670      3
+
+, , Age = Child, Survived = Yes
+
+      Sex
+Class  Male Female
+  1st     5      1
+  2nd    11     13
+  3rd    13     14
+  Crew    0      0
+
+, , Age = Adult, Survived = Yes
+
+      Sex
+Class  Male Female
+  1st    57    140
+  2nd    14     80
+  3rd    75     76
+  Crew  192     20
+
+> margin.table(Titanic)
+[1] 2201
+> margin.table(Titanic,1)
+Class
+ 1st  2nd  3rd Crew 
+ 325  285  706  885 
+> margin.table(Titanic,4)
+Survived
+  No  Yes 
+1490  711 
+> 32+17+670+387+154+118+4+13+89+3
+[1] 1487
+> 35+17+670+387+154+118+4+13+89+3
+[1] 1490
+> margin.table(Titanic,2)
+Sex
+  Male Female 
+  1731    470 
+> margin.table(Titanic,3)
+Age
+Child Adult 
+  109  2092 
+> Titanic.data
+Error: object 'Titanic.data' not found
+> 154+13
+[1] 167
+> 35+17+387+89
+[1] 528
+> 57+140+6
+[1] 203
+> mdat <- matrix(c(122,167,528,673, 203,118,178,212), nrow = 3, ncol = 4, byrow = TRUE,
++                dimnames = list(c("Survival", "N0","YES"),
++                                c("1st", "2nd", "3rd","Crew")))
+Warning message:
+In matrix(c(122, 167, 528, 673, 203, 118, 178, 212), nrow = 3, ncol = 4,  :
+  data length [8] is not a sub-multiple or multiple of the number of rows [3]
+> mdat
+         1st 2nd 3rd Crew
+Survival 122 167 528  673
+N0       203 118 178  212
+YES      122 167 528  673
+> mdat <- matrix(c(122,167,528,673, 203,118,178,212), nrow = 2, ncol = 5, byrow = TRUE,
++                dimnames = list(c("N0","YES"),
++                                c("Survival","1st", "2nd", "3rd","Crew")))
+Warning message:
+In matrix(c(122, 167, 528, 673, 203, 118, 178, 212), nrow = 2, ncol = 5,  :
+  data length [8] is not a sub-multiple or multiple of the number of columns [5]
+> mdat
+    Survival 1st 2nd 3rd Crew
+N0       122 167 528 673  203
+YES      118 178 212 122  167
+> mdat <- matrix(c(122,167,528,673, 203,118,178,212), nrow = 3, ncol = 3, byrow = TRUE,
++                dimnames = list(c("Survival","N0","YES"),
++                                c("1st", "2nd", "3rd","Crew")))
+Error in matrix(c(122, 167, 528, 673, 203, 118, 178, 212), nrow = 3, ncol = 3,  : 
+  length of 'dimnames' [2] not equal to array extent
+In addition: Warning message:
+In matrix(c(122, 167, 528, 673, 203, 118, 178, 212), nrow = 3, ncol = 3,  :
+  data length [8] is not a sub-multiple or multiple of the number of rows [3]
+> mdat <- matrix(c(122,167,528,673, 203,118,178,212), nrow = 3, ncol = 4, byrow = TRUE,
++                dimnames = list(c("Survival","N0","YES"),
++                                c("1st", "2nd", "3rd","Crew")))
+Warning message:
+In matrix(c(122, 167, 528, 673, 203, 118, 178, 212), nrow = 3, ncol = 4,  :
+  data length [8] is not a sub-multiple or multiple of the number of rows [3]
+> mdat
+         1st 2nd 3rd Crew
+Survival 122 167 528  673
+N0       203 118 178  212
+YES      122 167 528  673
+> mdat <- matrix(c(122,167,528,673, 203,118,178,212), nrow = 2, ncol = 4, byrow = TRUE,
++                dimnames = list(c("Survival","N0","YES"),
++                                c("1st", "2nd", "3rd","Crew")))
+Error in matrix(c(122, 167, 528, 673, 203, 118, 178, 212), nrow = 2, ncol = 4,  : 
+  length of 'dimnames' [1] not equal to array extent
+> mdat <- matrix(c(122,167,528,673, 203,118,178,212), nrow = 3, ncol = 4, byrow = TRUE,
++                dimnames = list(c("Survival","N0","YES"),
++                                c("1st", "2nd", "3rd","Crew")))
+Warning message:
+In matrix(c(122, 167, 528, 673, 203, 118, 178, 212), nrow = 3, ncol = 4,  :
+  data length [8] is not a sub-multiple or multiple of the number of rows [3]
+> mdat
+         1st 2nd 3rd Crew
+Survival 122 167 528  673
+N0       203 118 178  212
+YES      122 167 528  673
+> mdat <- matrix(c(122,167,528,673, 203,118,178,212), nrow = 2, ncol = 4, byrow = TRUE,
++                dimnames = list(c("N0","YES"),
++                                c("1st", "2nd", "3rd","Crew")))
+> mdat
+    1st 2nd 3rd Crew
+N0  122 167 528  673
+YES 203 118 178  212
+> barplot(mdat,
++         main = "Survival of Each Class",
++         xlab = "Class",
++         col = c("red","blue")
++ )
+> 
+> legend("topleft",
++        c("Not survived","Survived"),
++        fill = c("red","blue")
++ )
+> barplot(mdat,
++         main = "Survival of Each Class",
++         xlab = "Class",
++         ylab = "AdeQuate"
++         col = c("red","green")
+Error: unexpected symbol in:
+"        ylab = "AdeQuate"
+        col"
+> )
+Error: unexpected ')' in ")"
+> 
+> legend("topleft",
++        c("Not survived","Survived"),
++        fill = c("red","green")
++ )
+> barplot(mdat,
++         main = "Survival of Each Class",
++         xlab = "Class",
++         ylab = "AdeQuate",
++         col = c("red","green")
++ )
+> 
+> legend("topleft",
++        c("Not survived","Survived"),
++        fill = c("red","green")
++ )
