@@ -1,0 +1,92 @@
+
+R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> getwd()
+[1] "C:/Users/Sahil/Documents"
+> data1->scan(what = integer())
+Error: object 'data1' not found
+> data1<-scan(what = integer())
+1: 45 87 34 23 100 2 13 97 67
+10: 
+Read 9 items
+> labels="nikki","sahil","vimal","manju","sagarika","rachit","chenlong"
+Error: unexpected ',' in "labels="nikki","
+> labels=c("nikki","sahil","vimal","manju","sagarika","rachit","chenlong")
+> labels
+[1] "nikki"    "sahil"    "vimal"    "manju"    "sagarika" "rachit"   "chenlong"
+> remove<-c("nikki")
+> remove1<-c("nikki")
+> setdiff(remove1,labels)
+character(0)
+> labels %in% remove1
+[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+> labels [! labels %in% remove1]
+[1] "sahil"    "vimal"    "manju"    "sagarika" "rachit"   "chenlong"
+> labels
+[1] "nikki"    "sahil"    "vimal"    "manju"    "sagarika" "rachit"   "chenlong"
+> rm(labels)
+> data1<-scan(what = integer())
+1: 1: 45 87 34 23 100 2 13 97 67
+Error in scan(what = integer()) : scan() expected 'an integer', got '1:'
+> data=c(12,45,23,100,56,87,34)
+> dim(data)
+NULL
+> str(data)
+ num [1:7] 12 45 23 100 56 87 34
+> summary(data)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   12.0    28.5    45.0    51.0    71.5   100.0 
+> lab=c("delhi","chennai","pakistan","russsia","angola","ghuta","bong")
+> lab
+[1] "delhi"    "chennai"  "pakistan" "russsia"  "angola"   "ghuta"    "bong"    
+> lab
+[1] "delhi"    "chennai"  "pakistan" "russsia"  "angola"   "ghuta"    "bong"    
+> pie(data,labels = names(lab))
+> pie(data,labels = lab)
+> pie(data,labels = lab,col = rainbow())
+Error in rainbow() : argument "n" is missing, with no default
+> pie(data,labels = lab,col = rainbow(length(data)))
+> x <-  c(21, 62, 10,53)
+> labels <-  c("London","New York","Singapore","Mumbai")
+> pie(x, labels = piepercent, main = "City pie chart",col = rainbow(length(x)))
+Error in pie(x, labels = piepercent, main = "City pie chart", col = rainbow(length(x))) : 
+  object 'piepercent' not found
+> legend("topright", c("London","New York","Singapore","Mumbai"), cex = 0.8,
++        fill = rainbow(length(x)))
+> x <-  c(21, 62, 10,53)
+> labels <-  c("London","New York","Singapore","Mumbai")
+> piepercent<- round(100*x/sum(x), 1)
+> pie(x, labels = piepercent, main = "City pie chart",col = rainbow(length(x)))
+> legend("topright", c("London","New York","Singapore","Mumbai"), cex = 0.8,
++        fill = rainbow(length(x)))
+> ------------------------------------------------------------------------------------------------
++ 
++ 
++ 
++ .
+Error: object '.' not found
+> H=c(34,87,23,12)
+> barplot(H)
+> H <- c(7,12,28,3,41)
+> M <- c("Mar","Apr","May","Jun","Jul")
+> barplot(H,names.arg = M,xlab = "Month",ylab = "Revenue",col = "blue",
++         main = "Revenue chart",border = "red")
+> ----------------------------------------------------------------------------------------------
++ .
+Error: object '.' not found
+> v <-  c(9,13,21,8,36,22,12,41,31,33,19)
+> hist(v,xlab = "Weight",col = "yellow",border = "blue")
