@@ -37,3 +37,12 @@ divisbleby3=function(num){
     print("Number is not divisble by 3")
   }
 }
+
+
+
+number=12
+if(number==11){
+  print("hello")
+}else{
+  print("Bhaad me")
+}
